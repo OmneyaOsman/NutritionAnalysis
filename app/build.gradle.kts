@@ -2,11 +2,13 @@ plugins {
     id("com.android.application")
     id("nutrition_analysis.plugin")
     id("androidx.navigation.safeargs")
-    id("kotlin-kapt")
 }
 
 
 dependencies {
+    implementation(project(":di"))
+    implementation(project(":core"))
     appCompat()
-    implementation (Dependencies.KOTLIN_REFLECT)
+    implementation(Dependencies.KOTLIN_REFLECT)
+
 }
