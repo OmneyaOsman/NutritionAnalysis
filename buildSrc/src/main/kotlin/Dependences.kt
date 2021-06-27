@@ -8,9 +8,6 @@ object Dependencies {
     const val HILT = "com.google.dagger:hilt-android:${Versions.HILT}"
     const val HILT_DAGGER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
 
-    const val ANDROID_WORK_MANAGER = "androidx.work:work-runtime-ktx:${Androidx.WORK_MANAGER}"
-    const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
-
     const val RECYCLERVIEW =
         "androidx.recyclerview:recyclerview:${Versions.RECYCLER_VIEW}"
     const val CONSTRAINTLAYOUT =
@@ -19,13 +16,11 @@ object Dependencies {
         "com.google.android.material:material:${Versions.MATERIAL_ANDROID}"
     const val SWIPE_REFRESH_LAYOUT =
         "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.SWIPE_REFRESH_LAYOUT}"
-    const val VIEWPAGER_2 = "androidx.viewpager2:viewpager2:${Versions.VIEWPAGER_2}"
     const val SWIPE_TO_REVEAL =
         "com.chauthai.swipereveallayout:swipe-reveal-layout:${Versions.SWIPE_TO_REVEAL}"
 
-    const val ANDROID_ROOM_RUNTIME = "androidx.room:room-runtime:${Androidx.ROOM}"
-    const val ANDROID_ROOM_KTX = "androidx.room:room-ktx:${Androidx.ROOM}"
-    const val ANDROID_ROOM_COMPILER = "androidx.room:room-compiler:${Androidx.ROOM}"
+    const val KOIN_ANDROID = "io.insert-koin:koin-android:${Versions.KOIN}"
+
 
     const val ANDROID_LIFECYCLE_RUNTIME =
         "androidx.lifecycle:lifecycle-runtime:${Androidx.LIFECYCLE}"
@@ -138,10 +133,8 @@ fun DependencyHandler.retrofit() {
     implementation(Dependencies.RETROFIT_CONVERTER_GSON)
 }
 
-fun DependencyHandler.room() {
-    implementation(Dependencies.ANDROID_ROOM_RUNTIME)
-    implementation(Dependencies.ANDROID_ROOM_KTX)
-    kapt(Dependencies.ANDROID_ROOM_COMPILER)
+fun DependencyHandler.koin() {
+    implementation(Dependencies.KOIN_ANDROID)
 }
 
 fun DependencyHandler.implementation(depName: Any) {

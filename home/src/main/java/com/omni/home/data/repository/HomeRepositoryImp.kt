@@ -7,9 +7,8 @@ import com.omni.home.data.model.request.IngredientRequestModel
 import com.omni.home.data.model.response.NutritionAnalyzeResponse
 import com.omni.home.data.remote.NutritionService
 import com.omni.home.domain.repository.HomeRepository
-import javax.inject.Inject
 
-class HomeRepositoryImp @Inject constructor(
+class HomeRepositoryImp (
     private val service: NutritionService,
     private val gson: Gson
 ) : HomeRepository {

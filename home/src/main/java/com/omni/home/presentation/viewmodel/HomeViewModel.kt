@@ -4,12 +4,10 @@ import androidx.lifecycle.viewModelScope
 import com.omni.core.base.BaseViewModel
 import com.omni.home.data.model.request.IngredientRequestModel
 import com.omni.home.domain.usecase.AnalyzeIngredientsUseCase
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class HomeViewModel @Inject constructor(private val useCase: AnalyzeIngredientsUseCase) :
+
+class HomeViewModel (private val useCase: AnalyzeIngredientsUseCase) :
     BaseViewModel() {
         init {
             viewModelScope.launch {

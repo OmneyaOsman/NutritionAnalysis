@@ -14,7 +14,6 @@ class AndroidPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         project.plugins.apply("kotlin-android")
         project.plugins.apply("kotlin-kapt")
-        project.plugins.apply("dagger.hilt.android.plugin")
 
         project.configureAndroid()
         project.configureDependencies()
@@ -138,8 +137,7 @@ private fun Project.configureDependencies() = dependencies {
     implementation(Dependencies.RETROFIT)
     implementation(Dependencies.CONSTRAINTLAYOUT)
     implementation(Dependencies.ANDROID_MATERIAL_DESIGN)
-    implementation (Dependencies.HILT)
-    kapt (Dependencies.HILT_DAGGER)
+    implementation(Dependencies.KOIN_ANDROID)
     implementation(Dependencies.NAVIGATION_FRAGMENTX)
     implementation(Dependencies.NAVIGATION_UI)
 }

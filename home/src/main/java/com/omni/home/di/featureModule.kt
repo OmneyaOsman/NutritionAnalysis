@@ -5,31 +5,27 @@ import com.omni.home.data.remote.NutritionService
 import com.omni.home.data.repository.HomeRepositoryImp
 import com.omni.home.domain.repository.HomeRepository
 import com.omni.home.domain.usecase.AnalyzeIngredientsUseCase
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.FragmentComponent
+import com.omni.home.presentation.viewmodel.HomeViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 import retrofit2.Retrofit
-import javax.inject.Singleton
-
-@Module
-@InstallIn(FragmentComponent::class)
-object HomeFeatureModule {
-
-    @Singleton
-    @Provides
-    fun provideNutritionServiceAPI(retrofit: Retrofit): NutritionService =
-        retrofit.create(NutritionService::class.java)
-
-    @Singleton
-    @Provides
-    fun provideHomeRepository(service: NutritionService, gson: Gson): HomeRepository =
-        HomeRepositoryImp(service, gson)
-
-    @Singleton
-    @Provides
-    fun provideAnalyzeNutritionUseCase(repository: HomeRepositoryImp): AnalyzeIngredientsUseCase =
-        AnalyzeIngredientsUseCase(repository)
 
 
+val homeFeatureModule = module {
+    factory { provideNutritionServiceAPI(get()) }
+    single { provideHomeRepository(get(), get()) }
+    single { provideAnalyzeNutritionUseCase(get()) }
+    viewModel { HomeViewModel(get()) }
 }
+
+fun provideNutritionServiceAPI(retrofit: Retrofit): NutritionService =
+    retrofit.create(NutritionService::class.java)
+
+
+fun provideHomeRepository(service: NutritionService, gson: Gson): HomeRepositoryImp =
+    HomeRepositoryImp(service, gson)
+
+
+fun provideAnalyzeNutritionUseCase(repository: HomeRepositoryImp): AnalyzeIngredientsUseCase =
+    AnalyzeIngredientsUseCase(repository)
+

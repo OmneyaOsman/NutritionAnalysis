@@ -2,16 +2,20 @@ package com.omni.nutritionanalysis
 
 import android.app.Application
 import com.devexy.nutritionanalysis.BuildConfig
-import dagger.hilt.android.HiltAndroidApp
+import com.omni.di.networkModule
+import com.omni.home.di.homeFeatureModule
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 import timber.log.Timber
 
-@HiltAndroidApp
+
 class NutritionAnalysisApplication : Application() {
 
 
     override fun onCreate() {
         super.onCreate()
         setupTimber()
+        setUpKoin()
     }
 
     private fun setupTimber() {
@@ -20,6 +24,18 @@ class NutritionAnalysisApplication : Application() {
                 override fun createStackElementTag(element: StackTraceElement) =
                     "${super.createStackElementTag(element)}:${element.lineNumber}"
             })
+        }
+    }
+
+    private fun setUpKoin() {
+        startKoin {
+            androidContext(this@NutritionAnalysisApplication)
+            modules(
+                listOf(
+                    networkModule,
+                    homeFeatureModule,
+                )
+            )
         }
     }
 }

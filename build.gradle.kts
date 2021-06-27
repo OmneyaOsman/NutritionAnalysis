@@ -1,7 +1,6 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 buildscript {
-    val kotlin_version by extra("1.5.20")
     repositories {
         google()
         jcenter()
@@ -11,7 +10,6 @@ buildscript {
     dependencies {
         classpath(BuildDependencies.androidGradle)
         classpath(kotlin("gradle-plugin", version = Versions.KOTLIN))
-        classpath(BuildDependencies.hiltDaggerGradle)
         classpath(BuildDependencies.navigationGradle)
         classpath(BuildDependencies.dependencyGraphGenerator)
         classpath(BuildDependencies.googleGradle)

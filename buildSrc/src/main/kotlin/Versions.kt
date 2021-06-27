@@ -14,6 +14,7 @@ object Versions {
     const val COROUTINES_ANDROID_CORE = "1.4.0"
     const val NAVIGATION = "2.3.5"
     const val GLIDE = "4.11.0"
+    const val KOIN = "3.0.1"
 
     const val TIMBER = "4.7.1"
 
