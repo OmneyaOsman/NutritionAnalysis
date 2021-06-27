@@ -13,7 +13,6 @@ object Versions {
     const val COROUTINES_ANDROID = "1.4.3"
     const val COROUTINES_ANDROID_CORE = "1.4.0"
     const val NAVIGATION = "2.3.5"
-    const val GLIDE = "4.11.0"
     const val KOIN = "3.0.1"
 
     const val TIMBER = "4.7.1"
@@ -26,9 +25,12 @@ object Versions {
     const val androidxTest = "1.2.0"
     const val espresso = "3.2.0"
     const val androidxJunit = "1.1.1"
-    const val junit = "4.12"
+    const val junit = "4.13.2"
     const val junitPlatformRunner = "1.0.2"
     const val coreTesting = "2.1.0"
+    const val mockito = "3.3.3"
+    const val mockk = "1.9.3"
+    const val turbin = "0.4.0"
 
 }
 

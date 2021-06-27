@@ -54,9 +54,6 @@ object Dependencies {
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES_ANDROID}"
     const val COROUTINES_CORE =
         "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES_ANDROID_CORE}"
-    const val TEST_KOTLINX_COROUTINES =
-        "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9"
-
 
 }
 
@@ -93,8 +90,15 @@ object TestDependencies {
         const val junit =
             "androidx.test.ext:junit:${Versions.androidxJunit}"
         const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
-
     }
+    const val TEST_KOTLINX_COROUTINES =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES_ANDROID}"
+
+    const val JUNIT ="junit:junit:${Versions.junit}"
+    const val MOCKITO_CORE ="org.mockito:mockito-core:${Versions.mockito}"
+    const val MOCKITO_INLINE="org.mockito:mockito-inline:${Versions.mockito}"
+    const val MOCKK="io.mockk:mockk:${Versions.mockk}"
+    const val TURBIN="app.cash.turbine:turbine:${Versions.turbin}"
 }
 
 fun DependencyHandler.coroutines() {
@@ -107,10 +111,10 @@ fun DependencyHandler.appCompat() {
     implementation(Dependencies.ANDROID_APP_COMPAT)
 }
 
-fun DependencyHandler.hilt() {
-    // Hilt dependencies
-    implementation(Dependencies.HILT)
-    kapt(Dependencies.HILT_DAGGER)
+fun DependencyHandler.mockito() {
+    testImplementation(TestDependencies.MOCKITO_CORE)
+    testImplementation(TestDependencies.MOCKITO_INLINE)// To mock final classes
+    testImplementation(TestDependencies.MOCKK)
 }
 
 fun DependencyHandler.androidXNavigation(){

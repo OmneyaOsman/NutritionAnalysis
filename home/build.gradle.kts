@@ -8,4 +8,14 @@ dependencies {
     implementation(project(mapOf("path" to ":core")))
     appCompat()
     retrofit()
+    lifecycle()
+
+    testImplementation(TestDependencies.JUNIT)
+    testImplementation(TestDependencies.AndroidX.coreTesting)
+    testImplementation(TestDependencies.TEST_KOTLINX_COROUTINES) {
+        exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-debug")
+    }
+    testImplementation(TestDependencies.TURBIN)
+    mockito()
+
 }
