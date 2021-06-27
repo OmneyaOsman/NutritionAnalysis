@@ -4,9 +4,9 @@ object Dependencies {
 
     const val ANDROID_APP_COMPAT = "androidx.appcompat:appcompat:${Androidx.APP_COMPAT}"
     const val ANDROID_CORE_KTX = "androidx.core:core-ktx:${Androidx.CORE_KTX}"
-    const val KOTLIN_REFLECT ="org.jetbrains.kotlin:kotlin-reflect:${Versions.KOTLIN}"
-    const val HILT ="com.google.dagger:hilt-android:${Versions.HILT}"
-    const val HILT_DAGGER ="com.google.dagger:hilt-android-compiler:${Versions.HILT}"
+    const val KOTLIN_REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${Versions.KOTLIN}"
+    const val HILT = "com.google.dagger:hilt-android:${Versions.HILT}"
+    const val HILT_DAGGER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
 
     const val ANDROID_WORK_MANAGER = "androidx.work:work-runtime-ktx:${Androidx.WORK_MANAGER}"
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
@@ -114,10 +114,14 @@ fun DependencyHandler.appCompat() {
 
 fun DependencyHandler.hilt() {
     // Hilt dependencies
-    implementation (Dependencies.HILT)
-    kapt (Dependencies.HILT_DAGGER)
+    implementation(Dependencies.HILT)
+    kapt(Dependencies.HILT_DAGGER)
 }
 
+fun DependencyHandler.androidXNavigation(){
+    implementation(Dependencies.NAVIGATION_FRAGMENTX)
+    implementation(Dependencies.NAVIGATION_UI)
+}
 fun DependencyHandler.lifecycle() {
     implementation(Dependencies.ANDROID_LIFECYCLE_RUNTIME)
     implementation(Dependencies.ANDROID_LIFECYCLE_EX)

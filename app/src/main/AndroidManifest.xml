@@ -8,8 +8,11 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name="com.omni.nutritionanalysis.NutritionAnalysisApplication"
         android:theme="@style/Theme.NutritionAnalysis">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name="com.omni.nutritionanalysis.MainActivity"
+            android:theme="@style/Theme.NutritionAnalysis.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

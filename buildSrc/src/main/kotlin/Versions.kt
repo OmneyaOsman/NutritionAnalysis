@@ -12,7 +12,7 @@ object Versions {
     const val SWIPE_TO_REVEAL = "1.4.1"
     const val COROUTINES_ANDROID = "1.4.3"
     const val COROUTINES_ANDROID_CORE = "1.4.0"
-    const val NAVIGATION = "2.3.1"
+    const val NAVIGATION = "2.3.5"
     const val GLIDE = "4.11.0"
 
     const val TIMBER = "4.7.1"
@@ -41,7 +41,7 @@ object AndroidSettings {
 }
 
 object Androidx {
-    const val APP_COMPAT = "1.2.0"
+    const val APP_COMPAT = "1.3.0"
     const val LIFECYCLE = "2.2.0"
     const val LIFECYCLE_VERSION = "2.4.0-alpha01"
     const val CORE_KTX = "1.3.2"

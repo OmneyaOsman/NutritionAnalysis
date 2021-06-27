@@ -5,6 +5,7 @@ plugins {
     id("kotlin-android")
 }
 dependencies {
+    implementation(project(mapOf("path" to ":core")))
     appCompat()
     retrofit()
 }
