@@ -5,53 +5,53 @@ import com.google.gson.annotations.SerializedName
 
 data class TotalDaily(
     @SerializedName("CA")
-    val cA: CA?,
+    val cA: CustomDataClass? = null,
     @SerializedName("CHOCDF")
-    val cHOCDF: CHOCDF?,
+    val cHOCDF: CustomDataClass? = null,
     @SerializedName("CHOLE")
-    val cHOLE: CHOLE?,
+    val cHOLE: CustomDataClass?= null,
     @SerializedName("ENERC_KCAL")
-    val eNERCKCAL: ENERCKCAL?,
+    val eNERCKCAL: CustomDataClass?= null,
     @SerializedName("FASAT")
-    val fASAT: FASAT?,
+    val fASAT: CustomDataClass?= null,
     @SerializedName("FAT")
-    val fAT: FAT?,
+    val fAT: CustomDataClass?= null,
     @SerializedName("FE")
-    val fE: FE?,
+    val fE: CustomDataClass?= null,
     @SerializedName("FIBTG")
-    val fIBTG: FIBTG?,
+    val fIBTG: CustomDataClass?= null,
     @SerializedName("FOLDFE")
-    val fOLDFE: FOLDFE?,
+    val fOLDFE: CustomDataClass?= null,
     @SerializedName("K")
-    val k: K?,
+    val k: CustomDataClass?= null,
     @SerializedName("MG")
-    val mG: MG?,
+    val mG: CustomDataClass?= null,
     @SerializedName("NA")
-    val nA: NA?,
+    val nA: CustomDataClass?= null,
     @SerializedName("NIA")
-    val nIA: NIA?,
+    val nIA: CustomDataClass?= null,
     @SerializedName("P")
-    val p: P?,
+    val p: CustomDataClass?= null,
     @SerializedName("PROCNT")
-    val pROCNT: PROCNT?,
+    val pROCNT: CustomDataClass?= null,
     @SerializedName("RIBF")
-    val rIBF: RIBF?,
+    val rIBF: CustomDataClass?= null,
     @SerializedName("THIA")
-    val tHIA: THIA?,
+    val tHIA: CustomDataClass?= null,
     @SerializedName("TOCPHA")
-    val tOCPHA: TOCPHA?,
+    val tOCPHA: CustomDataClass?= null,
     @SerializedName("VITA_RAE")
-    val vITARAE: VITARAE?,
+    val vITARAE: CustomDataClass?= null,
     @SerializedName("VITB12")
-    val vITB12: VITB12?,
+    val vITB12: CustomDataClass?= null,
     @SerializedName("VITB6A")
-    val vITB6A: VITB6A?,
+    val vITB6A: CustomDataClass?= null,
     @SerializedName("VITC")
-    val vITC: VITC?,
+    val vITC: CustomDataClass?= null,
     @SerializedName("VITD")
-    val vITD: VITD?,
+    val vITD: CustomDataClass?= null,
     @SerializedName("VITK1")
-    val vITK1: VITK1?,
+    val vITK1: CustomDataClass?= null,
     @SerializedName("ZN")
-    val zN: ZN?
+    val zN: CustomDataClass?= null
 )

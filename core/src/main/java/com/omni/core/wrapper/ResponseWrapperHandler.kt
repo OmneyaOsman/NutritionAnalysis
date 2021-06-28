@@ -18,7 +18,7 @@ class ResponseWrapperHandler {
          * MODEL Just no need to mapper
          */
         suspend inline fun <reified MODEL> handleResponseWithoutMapper(
-            serviceMethod: () -> Response<String>,
+            serviceMethod: suspend () -> Response<String>,
             gson: Gson
         ): ResponseWrapper {
             return try {

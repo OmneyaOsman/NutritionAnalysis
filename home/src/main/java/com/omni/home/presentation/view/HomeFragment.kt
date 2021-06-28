@@ -4,11 +4,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import com.omni.core.extension.commonObserveViewModelFunctions
+import com.omni.core.extension.isValidText
 import com.omni.home.R
 import com.omni.home.databinding.FragmentHomeBinding
+import com.omni.home.domain.validation.TextValidation
 import com.omni.home.presentation.viewmodel.HomeViewModel
+import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import timber.log.Timber
 
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -26,7 +34,51 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }.also {
             _binding.lifecycleOwner = this
             _binding.viewModel = viewModel
+            commonObserveViewModelFunctions(viewModel, _binding)
+
             return _binding.root
+        }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        handleTextWatcher()
+        handleClickListeners()
+        observeViewModel()
+    }
+
+    private fun handleTextWatcher() {
+
+        _binding.recipeEditText.setOnFocusChangeListener { _, hasFocus ->
+            _binding.recipeEditText.doAfterTextChanged {
+                if (hasFocus)
+                    viewModel.setActiveStatus(it.toString().isValidText().not())
+            }
+        }
+    }
+
+    private fun handleClickListeners() {
+        _binding.analyzeBtn.setOnClickListener {
+            viewModel.analyzeIngredients(_binding.recipeEditText.text.toString())
+        }
+    }
+
+    private fun observeViewModel() {
+        viewModel.isValidText.observe(viewLifecycleOwner) { validation ->
+            when (validation) {
+                TextValidation.EMPTY, TextValidation.IN_VALID -> Toast.makeText(
+                    requireContext(),
+                    "Please Enter put all ingredient line by line, each line food name, quantity and unit",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.result.collect {
+                Timber.d(it?.toString())
+            }
         }
     }
 }

@@ -5,21 +5,21 @@ import com.google.gson.annotations.SerializedName
 
 data class NutritionAnalyzeResponse(
     @SerializedName("calories")
-    val calories: Int?,
+    val calories: Int? = null,
     @SerializedName("cautions")
-    val cautions: List<String>?,
+    val cautions: List<String>? = emptyList(),
     @SerializedName("dietLabels")
-    val dietLabels: List<String>?,
+    val dietLabels: List<String>?= emptyList(),
     @SerializedName("healthLabels")
-    val healthLabels: List<String>?,
+    val healthLabels: List<String>?= emptyList(),
     @SerializedName("totalDaily")
-    val totalDaily: TotalDaily?,
+    val totalDaily: TotalDaily? = null,
     @SerializedName("totalNutrients")
-    val totalNutrients: TotalNutrients?,
+    val totalNutrients: TotalNutrients? = null,
     @SerializedName("totalNutrientsKCal")
-    val totalNutrientsKCal: TotalNutrientsKCal?,
+    val totalNutrientsKCal: TotalNutrientsKCal? = null,
     @SerializedName("totalWeight")
-    val totalWeight: Int?,
+    val totalWeight: Int? = null,
     @SerializedName("uri")
-    val uri: String?
+    val uri: String? = null
 )

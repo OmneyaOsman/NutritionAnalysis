@@ -5,11 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 data class TotalNutrientsKCal(
     @SerializedName("CHOCDF_KCAL")
-    val cHOCDFKCAL: CHOCDFKCAL?,
+    val cHOCDFKCAL: CustomDataClass? = null,
     @SerializedName("ENERC_KCAL")
-    val eNERCKCAL: ENERCKCALXX?,
+    val eNERCKCAL: CustomDataClass? = null,
     @SerializedName("FAT_KCAL")
-    val fATKCAL: FATKCAL?,
+    val fATKCAL: CustomDataClass? = null,
     @SerializedName("PROCNT_KCAL")
-    val pROCNTKCAL: PROCNTKCAL?
+    val pROCNTKCAL: CustomDataClass? = null
 )

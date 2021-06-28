@@ -5,65 +5,65 @@ import com.google.gson.annotations.SerializedName
 
 data class TotalNutrients(
     @SerializedName("CA")
-    val cA: CAX?,
+    val cA: CustomDataClass? = null,
     @SerializedName("CHOCDF")
-    val cHOCDF: CHOCDFX?,
+    val cHOCDF: CustomDataClass? = null,
     @SerializedName("CHOLE")
-    val cHOLE: CHOLEX?,
+    val cHOLE: CustomDataClass? = null,
     @SerializedName("ENERC_KCAL")
-    val eNERCKCAL: ENERCKCALX?,
+    val eNERCKCAL: CustomDataClass? = null,
     @SerializedName("FAMS")
-    val fAMS: FAMS?,
+    val fAMS: CustomDataClass? = null,
     @SerializedName("FAPU")
-    val fAPU: FAPU?,
+    val fAPU: CustomDataClass? = null,
     @SerializedName("FASAT")
-    val fASAT: FASATX?,
+    val fASAT: CustomDataClass? = null,
     @SerializedName("FAT")
-    val fAT: FATX?,
+    val fAT: CustomDataClass? = null,
     @SerializedName("FE")
-    val fE: FEX?,
+    val fE: CustomDataClass? = null,
     @SerializedName("FIBTG")
-    val fIBTG: FIBTGX?,
+    val fIBTG: CustomDataClass? = null,
     @SerializedName("FOLAC")
-    val fOLAC: FOLAC?,
+    val fOLAC: CustomDataClass? = null,
     @SerializedName("FOLDFE")
-    val fOLDFE: FOLDFEX?,
+    val fOLDFE: CustomDataClass? = null,
     @SerializedName("FOLFD")
-    val fOLFD: FOLFD?,
+    val fOLFD: CustomDataClass? = null,
     @SerializedName("K")
-    val k: KX?,
+    val k: CustomDataClass? = null,
     @SerializedName("MG")
-    val mG: MGX?,
+    val mG: CustomDataClass? = null,
     @SerializedName("NA")
-    val nA: NAX?,
+    val nA: CustomDataClass? = null,
     @SerializedName("NIA")
-    val nIA: NIAX?,
+    val nIA: CustomDataClass? = null,
     @SerializedName("P")
-    val p: PX?,
+    val p: CustomDataClass? = null,
     @SerializedName("PROCNT")
-    val pROCNT: PROCNTX?,
+    val pROCNT: CustomDataClass? = null,
     @SerializedName("RIBF")
-    val rIBF: RIBFX?,
+    val rIBF: CustomDataClass? = null,
     @SerializedName("SUGAR")
-    val sUGAR: SUGAR?,
+    val sUGAR: CustomDataClass? = null,
     @SerializedName("THIA")
-    val tHIA: THIAX?,
+    val tHIA: CustomDataClass? = null,
     @SerializedName("TOCPHA")
-    val tOCPHA: TOCPHAX?,
+    val tOCPHA: CustomDataClass? = null,
     @SerializedName("VITA_RAE")
-    val vITARAE: VITARAEX?,
+    val vITARAE: CustomDataClass? = null,
     @SerializedName("VITB12")
-    val vITB12: VITB12X?,
+    val vITB12: CustomDataClass? = null,
     @SerializedName("VITB6A")
-    val vITB6A: VITB6AX?,
+    val vITB6A: CustomDataClass? = null,
     @SerializedName("VITC")
-    val vITC: VITCX?,
+    val vITC: CustomDataClass? = null,
     @SerializedName("VITD")
-    val vITD: VITDX?,
+    val vITD: CustomDataClass? = null,
     @SerializedName("VITK1")
-    val vITK1: VITK1X?,
+    val vITK1: CustomDataClass? = null,
     @SerializedName("WATER")
-    val wATER: WATER?,
+    val wATER: CustomDataClass? = null,
     @SerializedName("ZN")
-    val zN: ZNX?
+    val zN: CustomDataClass? = null,
 )

@@ -1,15 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-<variable
-    name="viewModel"
-    type="com.omni.home.presentation.viewmodel.HomeViewModel" />
+
+        <variable
+            name="viewModel"
+            type="com.omni.home.presentation.viewmodel.HomeViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/notes_title_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/margin_8"
+                android:paddingStart="@dimen/padding_18"
+                android:paddingTop="@dimen/margin_14"
+                android:paddingEnd="@dimen/padding_18"
+                android:paddingBottom="@dimen/margin_14"
+                android:text="@string/reciepe_ingredients"
+                android:textSize="@dimen/text_size_13"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/recipe_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/margin_15"
+                android:layout_marginTop="@dimen/margin_6"
+                android:layout_marginEnd="@dimen/margin_14"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/bg_stroke_003c64_rounded_2"
+                android:gravity="top"
+                android:hint="@string/text_field_hint"
+                android:inputType="textAutoCorrect|textMultiLine"
+                android:paddingStart="@dimen/margin_12"
+                android:paddingTop="@dimen/margin_8"
+                android:paddingEnd="@dimen/margin_12"
+                android:paddingBottom="@dimen/margin_8"
+                android:textSize="@dimen/text_size_13"
+                app:layout_constraintBottom_toTopOf="@id/analyze_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/notes_title_tv" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/analyze_btn"
+                isDimmed="@{viewModel.isNotActiveToAnalyze}"
+                isNotClickable="@{viewModel.isNotActiveToAnalyze}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@android:color/white"
+                android:text="@string/anylze"
+                android:textColor="@android:color/holo_purple"
+                app:cornerRadius="@dimen/margin_16"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recipe_edit_text" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                isVisible="@{viewModel.dataLoading}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>
