@@ -10,6 +10,7 @@ dependencies {
     implementation(project(":di"))
     implementation(project(":core"))
     implementation(project(":home"))
+    implementation(project(":navigation"))
 
 
     appCompat()

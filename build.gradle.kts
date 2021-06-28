@@ -1,6 +1,7 @@
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 buildscript {
+    val kotlin_version by extra("1.5.20")
     repositories {
         google()
         jcenter()
