@@ -2,6 +2,7 @@ package com.omni.nutritionanalysis
 
 import android.app.Application
 import com.devexy.nutritionanalysis.BuildConfig
+import com.omni.analysis_shared_data.di.analysisSharedDataModule
 import com.omni.di.networkModule
 import com.omni.home.di.homeFeatureModule
 import org.koin.android.ext.koin.androidContext
@@ -33,6 +34,7 @@ class NutritionAnalysisApplication : Application() {
             modules(
                 listOf(
                     networkModule,
+                    analysisSharedDataModule,
                     homeFeatureModule,
                 )
             )

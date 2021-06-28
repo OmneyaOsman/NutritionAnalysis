@@ -11,6 +11,7 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":home"))
     implementation(project(":navigation"))
+    implementation(project(":analysis_shared_data"))
 
 
     appCompat()

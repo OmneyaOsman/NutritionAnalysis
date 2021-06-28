@@ -8,8 +8,10 @@ import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.omni.core.extension.commonObserveViewModelFunctions
 import com.omni.core.extension.isValidText
+import com.omni.core.extension.navigateSafe
 import com.omni.home.R
 import com.omni.home.databinding.FragmentHomeBinding
 import com.omni.home.domain.validation.TextValidation
@@ -78,6 +80,12 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.result.collect {
                 Timber.d(it?.toString())
+            }
+        }
+
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.navigateToSummary.collect {
+                findNavController().navigateSafe(R.id.action_HomeFragment_to_SummaryFragment)
             }
         }
     }

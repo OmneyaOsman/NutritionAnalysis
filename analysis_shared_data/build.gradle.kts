@@ -6,10 +6,6 @@ plugins {
 }
 dependencies {
     implementation(project(mapOf("path" to ":core")))
-    implementation(project(":navigation"))
-    implementation(project(":analysis_shared_data"))
-
-    appCompat()
     retrofit()
     lifecycle()
 

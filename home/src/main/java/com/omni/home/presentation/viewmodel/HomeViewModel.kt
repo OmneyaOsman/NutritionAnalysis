@@ -8,15 +8,14 @@ import com.devexy.core.livedata.SingleLiveEvent
 import com.omni.core.base.BaseViewModel
 import com.omni.core.extension.handleCommonResponses
 import com.omni.core.wrapper.ResponseWrapper
-import com.omni.home.data.model.request.IngredientRequestModel
-import com.omni.home.data.model.response.NutritionAnalyzeResponse
-import com.omni.home.domain.usecase.AnalyzeIngredientsUseCase
+import com.omni.analysis_shared_data.data.model.request.IngredientRequestModel
+import com.omni.analysis_shared_data.data.model.response.NutritionAnalyzeResponse
+import com.omni.analysis_shared_data.domain.usecase.AnalyzeIngredientsUseCase
 import com.omni.home.domain.validation.TextValidation
 import com.omni.home.domain.validation.TextValidationRule
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
-import timber.log.Timber
 
 
 class HomeViewModel(
@@ -34,6 +33,9 @@ class HomeViewModel(
     private val _result: MutableStateFlow<NutritionAnalyzeResponse?> = MutableStateFlow(null)
     val result = _result.asStateFlow()
 
+    private val _navigateToSummary = MutableStateFlow(false)
+    val navigateToSummary = _navigateToSummary.asStateFlow()
+
 
     fun setActiveStatus(isActive: Boolean) {
         _isNotActiveToAnalyze.value = isActive
@@ -50,6 +52,7 @@ class HomeViewModel(
                     is ResponseWrapper.Success<*> -> {
                         val successResponse = responseWrapper.data as NutritionAnalyzeResponse
                         _result.value = successResponse
+                        _navigateToSummary.value = true
 
                     }
                     else -> {
