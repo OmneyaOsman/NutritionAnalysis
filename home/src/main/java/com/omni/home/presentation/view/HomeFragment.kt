@@ -85,7 +85,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.navigateToSummary.collect {
-                findNavController().navigateSafe(R.id.action_HomeFragment_to_SummaryFragment)
+                if (it)
+                    findNavController().navigateSafe(R.id.action_HomeFragment_to_SummaryFragment)
             }
         }
     }

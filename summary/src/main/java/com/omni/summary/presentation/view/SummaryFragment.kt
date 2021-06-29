@@ -14,7 +14,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class SummaryFragment : Fragment(R.layout.fragment_summary) {
 
     private lateinit var _binding: FragmentSummaryBinding
-    private val viewModel by viewModel<SummaryViewModel>()
+//    private val viewModel by viewModel<SummaryViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -25,8 +25,8 @@ class SummaryFragment : Fragment(R.layout.fragment_summary) {
             _binding = it
         }.also {
             _binding.lifecycleOwner = this
-            _binding.viewModel = viewModel
-            commonObserveViewModelFunctions(viewModel, _binding)
+//            _binding.viewModel = viewModel
+//            commonObserveViewModelFunctions(viewModel, _binding)
 
             return _binding.root
         }
