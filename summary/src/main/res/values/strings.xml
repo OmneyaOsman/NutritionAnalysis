@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="qty">Qty</string>
+    <string name="unit">Unit</string>
+    <string name="food">Food</string>
+    <string name="weight">Weight</string>
+    <string name="calories">Calories</string>
+</resources>
