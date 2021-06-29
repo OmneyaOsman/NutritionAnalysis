@@ -75,15 +75,15 @@ class HomeViewModel(
                 dataLoading.value = false
 
 
-                 ingredientsEntities.mapIndexed { index, ingredientEntity ->
+                ingredientsEntities.mapIndexed { index, ingredientEntity ->
                     list[index].let { nutritionAnalyzeResponse ->
                         ingredientEntity.calories = nutritionAnalyzeResponse.calories ?: 0
                         ingredientEntity.weight = nutritionAnalyzeResponse.totalWeight ?: 0
                     }
                 }.also {
-                     _result.value = ingredientsEntities
-
-                 }
+                    _result.value = ingredientsEntities
+                    _navigateToSummary.value = true
+                }
             }
         }
     }
