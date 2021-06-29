@@ -9,15 +9,15 @@
         android:name="com.omni.home.presentation.view.HomeFragment"
         android:label="Home">
 
-        <action
-            android:id="@+id/action_HomeFragment_to_SummaryFragment"
-            app:destination="@id/SummaryFragment" />
+<!--        <action-->
+<!--            android:id="@+id/action_HomeFragment_to_SummaryFragment"-->
+<!--            app:destination="@id/SummaryFragment" />-->
     </fragment>
 
-    <fragment
-        android:id="@+id/SummaryFragment"
-        android:name="com.omni.summary.presentation.view.SummaryFragment"
-        android:label="Home">
+<!--    <fragment-->
+<!--        android:id="@+id/SummaryFragment"-->
+<!--        android:name="com.omni.summary.presentation.view.SummaryFragment"-->
+<!--        android:label="Home">-->
 
-    </fragment>
+<!--    </fragment>-->
 </navigation>

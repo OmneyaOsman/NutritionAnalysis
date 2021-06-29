@@ -1,4 +1,4 @@
-package com.omni.analysis_shared_data.domain.repository
+package com.omni.home.domain.repository
 
 import com.omni.core.wrapper.ResponseWrapper
 import com.omni.analysis_shared_data.data.model.request.IngredientRequestModel

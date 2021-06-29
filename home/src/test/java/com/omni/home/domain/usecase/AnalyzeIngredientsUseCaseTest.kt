@@ -1,9 +1,8 @@
-package com.omni.analysis_shared_data.domain.usecase
+package com.omni.home.domain.usecase
 
 import com.omni.analysis_shared_data.data.model.request.IngredientRequestModel
 import com.omni.analysis_shared_data.data.model.response.NutritionAnalyzeResponse
-import com.omni.analysis_shared_data.data.repository.HomeRepositoryImp
-import com.omni.analysis_shared_data.domain.usecase.AnalyzeIngredientsUseCase
+import com.omni.home.data.repository.HomeRepositoryImp
 import com.omni.core.model.ServerErrorResponseModel
 import com.omni.core.wrapper.ResponseWrapper
 import kotlinx.coroutines.test.runBlockingTest

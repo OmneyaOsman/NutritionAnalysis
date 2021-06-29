@@ -18,6 +18,7 @@
             <option value="$PROJECT_DIR$/home" />
             <option value="$PROJECT_DIR$/navigation" />
             <option value="$PROJECT_DIR$/summary" />
+            <option value="$PROJECT_DIR$/total_nutrition" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
