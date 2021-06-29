@@ -19,6 +19,7 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import timber.log.Timber
 
 
 class HomeViewModel(
@@ -33,11 +34,10 @@ class HomeViewModel(
         Transformations.distinctUntilChanged(_isNotActiveToAnalyze.asLiveData())
 
     val isValidText: SingleLiveEvent<TextValidation?> = SingleLiveEvent()
-    private val _result: MutableStateFlow<List<IngredientEntity?>> = MutableStateFlow(emptyList())
+    private val _result: MutableStateFlow<List<IngredientEntity>?> = MutableStateFlow(emptyList())
     val result = _result.asStateFlow()
 
-    private val _navigateToSummary = MutableStateFlow(false)
-    val navigateToSummary = _navigateToSummary.asStateFlow()
+    val navigateToSummary = SingleLiveEvent<Boolean>()
 
 
     fun setActiveStatus(isActive: Boolean) {
@@ -67,25 +67,29 @@ class HomeViewModel(
         isValidText.value = validationRule.validate(text)
 
         if (isValidText.value == TextValidation.PASSED) {
+            dataLoading.value = true
+
             val ingredients = text.lines()
             val ingredientsEntities = getIngredientsEntities(ingredients)
             viewModelScope.launch {
-                dataLoading.value = true
                 getIngredientsDetails(ingredients)
-                dataLoading.value = false
-
 
                 ingredientsEntities.mapIndexed { index, ingredientEntity ->
+                    Timber.d("$index , ${ingredientEntity.food}")
                     list[index].let { nutritionAnalyzeResponse ->
-                        ingredientEntity.calories = nutritionAnalyzeResponse.calories ?: 0
-                        ingredientEntity.weight = nutritionAnalyzeResponse.totalWeight ?: 0
+                        ingredientEntity.calories = nutritionAnalyzeResponse.calories.toString()
+                        ingredientEntity.weight = nutritionAnalyzeResponse.totalWeight.toString()
                     }
                 }.also {
                     _result.value = ingredientsEntities
-                    _navigateToSummary.value = true
+                    navigateToSummary.value = true
                 }
+                dataLoading.value = false
             }
+
+
         }
+
     }
 
     private fun getIngredientsEntities(ingredients: List<String>): MutableList<IngredientEntity> {
