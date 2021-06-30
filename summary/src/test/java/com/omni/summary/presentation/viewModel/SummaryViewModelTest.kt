@@ -24,7 +24,7 @@ class SummaryViewModelTest {
     }
 
     @Test
-    fun `should emit value And not emit default value`() =
+    fun `should emit new value And not emit default value`() =
         runBlockingTest {
             val list = listOf(
                 IngredientEntity(
