@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import com.devexy.summary.R
 import com.devexy.summary.databinding.FragmentSummaryBinding
 import com.omni.analysis_shared_data.AnalysisSharedViewModel
 import com.omni.summary.presentation.viewModel.SummaryViewModel
 import com.omni.core.extension.commonObserveViewModelFunctions
+import com.omni.core.extension.navigateSafe
 import com.omni.summary.presentation.view.adapter.SummaryAdapter
 import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,7 +46,17 @@ class SummaryFragment : Fragment(R.layout.fragment_summary) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeSharedViewModel()
+        observeSummaryViewModel()
+        handleButtonClicks()
+    }
 
+    private fun handleButtonClicks() {
+        _binding.totalNutrition.setOnClickListener {
+            findNavController().navigateSafe(R.id.action_SummaryFragment_to_TotalNutritionFragment)
+        }
+    }
+
+    private fun observeSummaryViewModel() {
         lifecycleScope.launchWhenStarted {
             viewModel.ingredientEntities.collect {
                 Timber.d(it.toString())

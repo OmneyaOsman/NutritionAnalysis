@@ -19,5 +19,15 @@
         android:name="com.omni.summary.presentation.view.SummaryFragment"
         android:label="Summary">
 
+        <action
+            android:id="@+id/action_SummaryFragment_to_TotalNutritionFragment"
+            app:destination="@id/TotalNutritionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TotalNutritionFragment"
+        android:name="com.omni.total_nutrition.presentation.view.TotalNutritionFragment"
+        android:label="TotalNutritionFragment">
+
     </fragment>
 </navigation>
