@@ -1,8 +1,9 @@
-package com.omni.home.domain.usecase
+package com.omni.analysis_shared_data.domain.usecase
 
 import com.omni.analysis_shared_data.data.model.request.IngredientRequestModel
 import com.omni.analysis_shared_data.data.model.response.NutritionAnalyzeResponse
-import com.omni.home.data.repository.HomeRepositoryImp
+import com.omni.analysis_shared_data.data.repository.NutritionAnalysisRepositoryImp
+import com.omni.analysis_shared_data.domain.usecase.AnalyzeIngredientsUseCase
 import com.omni.core.model.ServerErrorResponseModel
 import com.omni.core.wrapper.ResponseWrapper
 import kotlinx.coroutines.test.runBlockingTest
@@ -15,7 +16,7 @@ import org.mockito.Mockito
 class AnalyzeIngredientsUseCaseTest {
 
     private lateinit var useCase: AnalyzeIngredientsUseCase
-    private val mockRepo = Mockito.mock(HomeRepositoryImp::class.java)
+    private val mockRepo = Mockito.mock(NutritionAnalysisRepositoryImp::class.java)
     private val mockResponseEntity = Mockito.mock(NutritionAnalyzeResponse::class.java)
     private val mockErrorResponseEntity = Mockito.mock(ServerErrorResponseModel::class.java)
 

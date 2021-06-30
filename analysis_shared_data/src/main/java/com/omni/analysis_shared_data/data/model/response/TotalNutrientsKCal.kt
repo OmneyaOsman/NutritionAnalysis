@@ -2,15 +2,14 @@ package com.omni.analysis_shared_data.data.model.response
 
 
 import com.google.gson.annotations.SerializedName
-import com.omni.analysis_shared_data.data.model.response.CustomDataClass
 
 data class TotalNutrientsKCal(
     @SerializedName("CHOCDF_KCAL")
-    val cHOCDFKCAL: CustomDataClass? = null,
+    val cHOCDFKCAL: CustomNutritionDataModel? = null,
     @SerializedName("ENERC_KCAL")
-    val eNERCKCAL: CustomDataClass? = null,
+    val eNERCKCAL: CustomNutritionDataModel? = null,
     @SerializedName("FAT_KCAL")
-    val fATKCAL: CustomDataClass? = null,
+    val fATKCAL: CustomNutritionDataModel? = null,
     @SerializedName("PROCNT_KCAL")
-    val pROCNTKCAL: CustomDataClass? = null
+    val pROCNTKCAL: CustomNutritionDataModel? = null
 )

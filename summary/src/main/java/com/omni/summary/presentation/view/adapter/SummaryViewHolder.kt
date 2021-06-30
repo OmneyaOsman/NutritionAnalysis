@@ -7,7 +7,6 @@ import com.omni.analysis_shared_data.domain.entity.IngredientEntity
 class SummaryViewHolder(private val binding: ListItemIngredientBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun bind(ingredientEntity: IngredientEntity) {
-        binding.calories.text = ingredientEntity.calories
         binding.ingredient = ingredientEntity
         binding.executePendingBindings()
     }

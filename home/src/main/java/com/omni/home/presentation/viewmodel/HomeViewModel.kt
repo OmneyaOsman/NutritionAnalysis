@@ -12,7 +12,7 @@ import com.omni.analysis_shared_data.data.model.request.IngredientRequestModel
 import com.omni.analysis_shared_data.data.model.response.NutritionAnalyzeResponse
 import com.omni.analysis_shared_data.domain.entity.IngredientEntity
 import com.omni.core.extension.asyncAll
-import com.omni.home.domain.usecase.AnalyzeIngredientsUseCase
+import com.omni.analysis_shared_data.domain.usecase.AnalyzeIngredientsUseCase
 import com.omni.home.domain.validation.TextValidation
 import com.omni.home.domain.validation.TextValidationRule
 import kotlinx.coroutines.awaitAll
@@ -34,7 +34,7 @@ class HomeViewModel(
         Transformations.distinctUntilChanged(_isNotActiveToAnalyze.asLiveData())
 
     val isValidText: SingleLiveEvent<TextValidation?> = SingleLiveEvent()
-    private val _result: MutableStateFlow<List<IngredientEntity>?> = MutableStateFlow(emptyList())
+    private val _result: MutableStateFlow<Pair<List<IngredientEntity> , List<String>>> = MutableStateFlow(Pair(emptyList() , emptyList()))
     val result = _result.asStateFlow()
 
     val navigateToSummary = SingleLiveEvent<Boolean>()
@@ -81,7 +81,7 @@ class HomeViewModel(
                         ingredientEntity.weight = nutritionAnalyzeResponse.totalWeight.toString()
                     }
                 }.also {
-                    _result.value = ingredientsEntities
+                    _result.value = Pair(ingredientsEntities , ingredients)
                     navigateToSummary.value = true
                 }
                 dataLoading.value = false

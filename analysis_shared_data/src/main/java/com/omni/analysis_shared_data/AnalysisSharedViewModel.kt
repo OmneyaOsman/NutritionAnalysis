@@ -7,9 +7,11 @@ import com.omni.analysis_shared_data.domain.entity.IngredientEntity
 class AnalysisSharedViewModel : ViewModel() {
 
     val ingredientEntities = SingleLiveEvent<List<IngredientEntity>>()
+    val ingredientRequestModel = SingleLiveEvent<List<String>>()
 
 
-    fun setIngredientEntities(list: List<IngredientEntity>) {
+    fun setIngredientData(list: List<IngredientEntity>, requestModel: List<String>) {
         ingredientEntities.postValue(list)
+        ingredientRequestModel.value = requestModel
     }
 }

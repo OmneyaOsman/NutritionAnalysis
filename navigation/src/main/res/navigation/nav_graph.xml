@@ -27,7 +27,7 @@
     <fragment
         android:id="@+id/TotalNutritionFragment"
         android:name="com.omni.total_nutrition.presentation.view.TotalNutritionFragment"
-        android:label="TotalNutritionFragment">
+        android:label="Total Nutrition">
 
     </fragment>
 </navigation>

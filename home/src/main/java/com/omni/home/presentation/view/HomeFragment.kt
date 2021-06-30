@@ -85,8 +85,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.result.collect {
                 Timber.d(it.toString())
-                it?.let {
-                    sharedViewModel.setIngredientEntities(it)
+                it.let {
+                    sharedViewModel.setIngredientData(it.first , it.second)
                 }
             }
         }

@@ -2,69 +2,68 @@ package com.omni.analysis_shared_data.data.model.response
 
 
 import com.google.gson.annotations.SerializedName
-import com.omni.analysis_shared_data.data.model.response.CustomDataClass
 
 data class TotalNutrients(
     @SerializedName("CA")
-    val cA: CustomDataClass? = null,
+    val cA: CustomNutritionDataModel? = null,
     @SerializedName("CHOCDF")
-    val cHOCDF: CustomDataClass? = null,
+    val cHOCDF: CustomNutritionDataModel? = null,
     @SerializedName("CHOLE")
-    val cHOLE: CustomDataClass? = null,
+    val cHOLE: CustomNutritionDataModel? = null,
     @SerializedName("ENERC_KCAL")
-    val eNERCKCAL: CustomDataClass? = null,
+    val eNERCKCAL: CustomNutritionDataModel? = null,
     @SerializedName("FAMS")
-    val fAMS: CustomDataClass? = null,
+    val fAMS: CustomNutritionDataModel? = null,
     @SerializedName("FAPU")
-    val fAPU: CustomDataClass? = null,
+    val fAPU: CustomNutritionDataModel? = null,
     @SerializedName("FASAT")
-    val fASAT: CustomDataClass? = null,
+    val fASAT: CustomNutritionDataModel? = null,
     @SerializedName("FAT")
-    val fAT: CustomDataClass? = null,
+    val fAT: CustomNutritionDataModel? = null,
     @SerializedName("FE")
-    val fE: CustomDataClass? = null,
+    val fE: CustomNutritionDataModel? = null,
     @SerializedName("FIBTG")
-    val fIBTG: CustomDataClass? = null,
+    val fIBTG: CustomNutritionDataModel? = null,
     @SerializedName("FOLAC")
-    val fOLAC: CustomDataClass? = null,
+    val fOLAC: CustomNutritionDataModel? = null,
     @SerializedName("FOLDFE")
-    val fOLDFE: CustomDataClass? = null,
+    val fOLDFE: CustomNutritionDataModel? = null,
     @SerializedName("FOLFD")
-    val fOLFD: CustomDataClass? = null,
+    val fOLFD: CustomNutritionDataModel? = null,
     @SerializedName("K")
-    val k: CustomDataClass? = null,
+    val k: CustomNutritionDataModel? = null,
     @SerializedName("MG")
-    val mG: CustomDataClass? = null,
+    val mG: CustomNutritionDataModel? = null,
     @SerializedName("NA")
-    val nA: CustomDataClass? = null,
+    val nA: CustomNutritionDataModel? = null,
     @SerializedName("NIA")
-    val nIA: CustomDataClass? = null,
+    val nIA: CustomNutritionDataModel? = null,
     @SerializedName("P")
-    val p: CustomDataClass? = null,
+    val p: CustomNutritionDataModel? = null,
     @SerializedName("PROCNT")
-    val pROCNT: CustomDataClass? = null,
+    val pROCNT: CustomNutritionDataModel? = null,
     @SerializedName("RIBF")
-    val rIBF: CustomDataClass? = null,
+    val rIBF: CustomNutritionDataModel? = null,
     @SerializedName("SUGAR")
-    val sUGAR: CustomDataClass? = null,
+    val sUGAR: CustomNutritionDataModel? = null,
     @SerializedName("THIA")
-    val tHIA: CustomDataClass? = null,
+    val tHIA: CustomNutritionDataModel? = null,
     @SerializedName("TOCPHA")
-    val tOCPHA: CustomDataClass? = null,
+    val tOCPHA: CustomNutritionDataModel? = null,
     @SerializedName("VITA_RAE")
-    val vITARAE: CustomDataClass? = null,
+    val vITARAE: CustomNutritionDataModel? = null,
     @SerializedName("VITB12")
-    val vITB12: CustomDataClass? = null,
+    val vITB12: CustomNutritionDataModel? = null,
     @SerializedName("VITB6A")
-    val vITB6A: CustomDataClass? = null,
+    val vITB6A: CustomNutritionDataModel? = null,
     @SerializedName("VITC")
-    val vITC: CustomDataClass? = null,
+    val vITC: CustomNutritionDataModel? = null,
     @SerializedName("VITD")
-    val vITD: CustomDataClass? = null,
+    val vITD: CustomNutritionDataModel? = null,
     @SerializedName("VITK1")
-    val vITK1: CustomDataClass? = null,
+    val vITK1: CustomNutritionDataModel? = null,
     @SerializedName("WATER")
-    val wATER: CustomDataClass? = null,
+    val wATER: CustomNutritionDataModel? = null,
     @SerializedName("ZN")
-    val zN: CustomDataClass? = null,
+    val zN: CustomNutritionDataModel? = null,
 )
