@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomeFragment">
+
+    <fragment
+        android:id="@+id/HomeFragment"
+        android:name="com.omni.home.presentation.view.HomeFragment"
+        android:label="Home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_SummaryFragment"
+            app:destination="@id/SummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SummaryFragment"
+        android:name="com.omni.summary.presentation.view.SummaryFragment"
+        android:label="Summary">
+
+        <action
+            android:id="@+id/action_SummaryFragment_to_TotalNutritionFragment"
+            app:destination="@id/TotalNutritionFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TotalNutritionFragment"
+        android:name="com.omni.total_nutrition.presentation.view.TotalNutritionFragment"
+        android:label="Total Nutrition">
+
+    </fragment>
+</navigation>

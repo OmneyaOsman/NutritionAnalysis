@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="reciepe_ingredients">Reciepe Ingredients</string>
+    <string name="text_field_hint">For example:\n1 cup rice, \n10 oz chickpeas</string>
+    <string name="anylze">Anylze</string>
+</resources>
