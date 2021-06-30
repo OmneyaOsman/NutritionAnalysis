@@ -3,6 +3,8 @@ plugins {
     id("androidx.navigation.safeargs")
     id("nutrition_analysis.plugin")
     id("kotlin-android")
+    id("kotlin-parcelize")
+
 }
 dependencies {
     implementation(project(mapOf("path" to ":core")))

@@ -6,6 +6,7 @@ import com.omni.analysis_shared_data.di.analysisSharedDataModule
 import com.omni.di.networkModule
 import com.omni.home.di.homeFeatureModule
 import com.omni.summary.di.summaryFeatureModule
+import com.omni.total_nutrition.di.totalNutritionFeatureModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import timber.log.Timber
@@ -38,6 +39,7 @@ class NutritionAnalysisApplication : Application() {
                     analysisSharedDataModule,
                     homeFeatureModule,
                     summaryFeatureModule,
+                    totalNutritionFeatureModule
                 )
             )
         }

@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="ingredient"
+            type="com.omni.analysis_shared_data.domain.entity.IngredientEntity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,7 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/qty"
+            android:text="@{ingredient.quantity}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/unit"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +30,8 @@
             android:id="@+id/unit"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/unit"
+            android:gravity="start"
+            android:text="@{ingredient.unit}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/food"
             app:layout_constraintStart_toEndOf="@id/quantity"
@@ -38,8 +41,8 @@
             android:id="@+id/food"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="@string/food"
+            android:gravity="start"
+            android:text="@{ingredient.food}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/calories"
             app:layout_constraintStart_toEndOf="@id/unit"
@@ -50,7 +53,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/calories"
+            android:text="@{ingredient.calories}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/weight"
             app:layout_constraintStart_toEndOf="@id/food"
@@ -61,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
-            android:text="@string/weight"
+            android:text="@{ingredient.weight}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/calories"

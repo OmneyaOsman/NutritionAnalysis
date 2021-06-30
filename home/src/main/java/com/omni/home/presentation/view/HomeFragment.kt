@@ -9,6 +9,8 @@ import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.navGraphViewModels
+import com.omni.analysis_shared_data.AnalysisSharedViewModel
 import com.omni.core.extension.commonObserveViewModelFunctions
 import com.omni.core.extension.isValidText
 import com.omni.core.extension.navigateSafe
@@ -25,6 +27,9 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private lateinit var _binding: FragmentHomeBinding
     private val viewModel by viewModel<HomeViewModel>()
+    private val sharedViewModel: AnalysisSharedViewModel by navGraphViewModels(
+        R.id.nav_graph
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,14 +84,16 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             viewModel.result.collect {
-                Timber.d(it?.toString())
+                Timber.d(it.toString())
+                it.let {
+                    sharedViewModel.setIngredientData(it.first , it.second)
+                }
             }
         }
 
-        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
-            viewModel.navigateToSummary.collect {
-                if (it)
-                    findNavController().navigateSafe(R.id.action_HomeFragment_to_SummaryFragment)
+        viewModel.navigateToSummary.observe(viewLifecycleOwner) {
+            if (it) {
+                findNavController().navigateSafe(R.id.action_HomeFragment_to_SummaryFragment)
             }
         }
     }
