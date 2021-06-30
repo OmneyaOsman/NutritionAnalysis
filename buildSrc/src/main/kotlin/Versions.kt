@@ -30,7 +30,7 @@ object Versions {
     const val coreTesting = "2.1.0"
     const val mockito = "3.3.3"
     const val mockk = "1.9.3"
-    const val turbin = "0.4.0"
+    const val turbin = "0.5.2"
 
 }
 
