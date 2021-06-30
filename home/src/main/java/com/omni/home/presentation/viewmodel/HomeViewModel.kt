@@ -29,12 +29,12 @@ class HomeViewModel(
     BaseViewModel() {
 
     private val _isNotActiveToAnalyze = MutableStateFlow(true)
-
     val isNotActiveToAnalyze: LiveData<Boolean> =
         Transformations.distinctUntilChanged(_isNotActiveToAnalyze.asLiveData())
 
     val isValidText: SingleLiveEvent<TextValidation?> = SingleLiveEvent()
-    private val _result: MutableStateFlow<Pair<List<IngredientEntity> , List<String>>> = MutableStateFlow(Pair(emptyList() , emptyList()))
+    private val _result: MutableStateFlow<Pair<List<IngredientEntity>, List<String>>> =
+        MutableStateFlow(Pair(emptyList(), emptyList()))
     val result = _result.asStateFlow()
 
     val navigateToSummary = SingleLiveEvent<Boolean>()
@@ -54,13 +54,6 @@ class HomeViewModel(
                 handleResponse(response)
             }
         }
-//        ingredients.asFlow() // a flow of requests
-//            .map { ing -> useCase(IngredientRequestModel(ingr = listOf(ing))) }.also {
-//
-//            }
-//            .collect { response ->
-//                handleResponse(response)
-//            }
     }
 
     fun analyzeIngredients(text: String) {
@@ -81,7 +74,7 @@ class HomeViewModel(
                         ingredientEntity.weight = nutritionAnalyzeResponse.totalWeight.toString()
                     }
                 }.also {
-                    _result.value = Pair(ingredientsEntities , ingredients)
+                    _result.value = Pair(ingredientsEntities, ingredients)
                     navigateToSummary.value = true
                 }
                 dataLoading.value = false
@@ -113,8 +106,6 @@ class HomeViewModel(
             is ResponseWrapper.Success<*> -> {
                 val successResponse = responseWrapper.data as NutritionAnalyzeResponse
                 list.add(successResponse)
-//                _result.value = successResponse
-//                _navigateToSummary.value = true
             }
             else -> {
                 responseWrapper.handleCommonResponses(this@HomeViewModel)
